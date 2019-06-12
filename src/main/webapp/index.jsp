@@ -5,6 +5,8 @@
 	Welcome to the Online Doctor Appointment System.It enables you to take
 	appointment with the different doctors having experience on different
 	fields and speciality working on different well-known Hospitals.
-</div>	
+
+	<h1>This is index
+	</h1> </div>	
 <%@include file="WEB-INF/views/footer.jsp"%>
 	
