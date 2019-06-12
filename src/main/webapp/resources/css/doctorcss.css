@@ -1,0 +1,97 @@
+@CHARSET "ISO-8859-1";
+html, body{
+	margin:0px;
+	height:100%;
+	background-color:#ffffff;
+	background-image: url("../background-image/variety-medical-situations-flat-style_23-2147541586.jpg");
+	background-attachment: fixed;
+	
+
+}
+#doctorHeader{
+	background-image: linear-gradient(to left,rgba(56, 5, 21,0.9),rgba(72, 96, 52,0.9));
+	background-image: url("../background-image/pattern.png");
+	background-repeat:repeat-x;
+	padding:10px 10px 10px 10px;
+	color:#fff;
+}
+#doctorContainer{
+	background-color: rgba(255, 255, 255,0.4);
+	color:rgb(96, 58, 5);
+}
+#content-container{
+	height: 600px;
+}
+#online{
+	display: inline-block;
+	font-size: 40px;
+}
+.doctor-name{
+	text-transform: capitalize;
+	display: inline-block;	
+	font-size: 25px;
+}
+#user{
+	display: inline-block;	
+	float:right;
+	
+}
+#logout{
+	text-decoration: none;
+	color:#00ffff;
+	display: inline-block;
+}
+/*link, visited */
+#logout:hover{
+	text-decoration: none;
+	color:#ff0000;
+	text-shadow: 2px 3px 2px #fff;
+	font-size: 20px;
+}
+	/* selected */
+	
+#nav-bar{
+	background-image: linear-gradient(to right,rgba(56, 5, 21,0.9),rgba(72, 96, 52,0.9));
+}
+.nav-btn{
+	text-decoration:none;
+	color:white;
+	display: inline-block;
+	padding:10px;
+	margin:0;
+	background-color: rgb(51, 2, 34);
+	font-size: 20px;
+}
+.nav-btn:hover{
+	background-color:rgb(237, 7, 45);
+	padding:15px;
+}
+#up-profile{
+	float: right;
+	background-color: rgb(2, 58, 3);
+	
+	
+}
+
+.doctor-patientlist{
+	width:70%;
+	height:500px;
+	margin:0 auto;
+	background-color:rgba(122, 86, 86,0.6);
+}
+.patient-info{
+	padding:10px;
+}
+table{
+	border-collapse: collapse;
+	margin:0 auto;
+}
+table ,th, td{
+		border:1px solid #000;
+}
+th,td{
+	padding: 10px;
+}
+.name{
+	text-transform: capitalize;
+}

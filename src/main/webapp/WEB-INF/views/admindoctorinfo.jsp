@@ -1,0 +1,117 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<spring1:url value="/resources/css/admincss.css" var="acss" />
+<link href="${acss}" rel="stylesheet" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>OA:Admin</title>
+</head>
+<body>
+
+	<div id="adminHeader">
+		<div id="online">Online Doctor Appointment</div>
+		<div id="admin_portal">Admin Portal</div>
+		<label class="adminheader">${firstname } ${lastname }</label><br>
+		<div id="user">
+			Username: <label id="usernam">${username }</label>
+		</div>
+	</div>
+	<hr>
+	<div id="adminContainer">
+		<div id="adminNav">
+			<a  href="adminhomebtn" >
+				<div class="nav-btn" >Home</div>
+			</a>
+			<a class="doctor" href="admindoctor">
+				<div class="nav-btn">Doctor</div>
+			</a> <a href="adminpatient">
+				<div class="nav-btn">Patient</div>
+			</a> <a href="adminlogout">
+				<div id="logout">Logout</div>
+			</a>
+		</div>
+		<div id="adminBody">
+			<div id="table">
+					<div id="label">Activated Doctor List</div>
+				<table>
+					<tr>
+						<th>FirstName</th>
+						<th>LastName</th>
+						<th>Address</th>
+						<th>PhoneNumber</th>
+						<th>Alternate PhNo.</th>
+						<th>Gender</th>
+						<th>Email</th>
+						<th>Change Status</th>
+
+					</tr>
+					<c:forEach var="emp" items="${dlist}">
+						<c:if test="${emp.status ==1}">
+							<tr>
+								<td>${emp.fnamed }</td>
+								<td>${emp.lnamed }</td>
+								<td>${emp.addressd }</td>
+								<td>${emp.phoned1 }</td>
+								<td>${emp.phoned2 }</td>
+								<td>${emp.genderd }</td>
+								<td id="emailt">${emp.emaild }</td>
+								<td><form action="deactivate" method="post">
+									<input type="hidden" value=${emp.did } name="did">
+									<input type="submit" value="Deactivate">
+								</form></td>
+
+							</tr>
+
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+			<div id="table">
+			<div id="label"l>Not Activated Doctor List</div>
+				<table>
+					<tr>
+						<th>FirstName</th>
+						<th>LastName</th>
+						<th>Address</th>
+						<th>PhoneNumber</th>
+						<th>Alternate PhNo.</th>
+						<th>Gender</th>
+						<th>Email</th>
+						<th>Change Status</th>
+						
+					</tr>
+					<c:forEach var="emp" items="${dlist}">
+						<c:if test="${emp.status !=1}">
+							<tr>
+								<td>${emp.fnamed }</td>
+								<td>${emp.lnamed }</td>
+								<td>${emp.addressd }</td>
+								<td>${emp.phoned1 }</td>
+								<td>${emp.phoned2 }</td>
+								<td>${emp.genderd }</td>
+								<td id="emailt">${emp.emaild }</td>
+								<td><form action="activate" method="post">
+									<input type="hidden" value=${emp.did } name="did">
+									<input type="submit" value="Activate">
+								</form></td>
+
+
+							</tr>
+
+						</c:if>
+
+					</c:forEach>
+				</table>
+			</div>
+
+		</div>
+</body>
+</html>
+
